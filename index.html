@@ -36,7 +36,9 @@
             padding-top: 40px;
             padding-bottom: 40px;
         }
-
+        .code{
+            padding-left: 50px;
+        }
         #poster {
             height: 400px;
             width: auto;
@@ -48,6 +50,10 @@
         footer{
             display: flex;
             justify-content: center;
+        }
+        #cd1,
+        #cd2{
+            padding-left: 80px;
         }
         @media screen and (max-width: 735px) {
             #poster{
@@ -76,6 +82,13 @@
                 width: 300px;
                 height: auto;
             }
+            .code{
+                padding-left: 0px;
+            }
+            #cd1,
+            #cd2{
+                padding-left: 10px;
+            }
         }
     </style>
 </head>
@@ -100,39 +113,35 @@
             <h2 class="heading">Tutorial</h2>
             <p>
                 1. Import two modules "string" and "random" <br>
-                <code style="padding-left: 50px;">import string</code> <br>
-                <code style="padding-left: 50px;">import random</code> <br>
-                2. Take input from user. For which account or username they want to make passwords.
-                <code style="padding-left: 50px;">username = input("Enter username or Account name:")</code> <br>
+                <code class="code">import string</code> <br>
+                <code class="code">import random</code> <br>
+                2. Take input from user. For which account or username they want to make passwords. <br>
+                <code class="code">username = input("Enter username or Account name:")</code> <br>
                 3. Take input containing length of the passwords they want to create. <br>
                 <code
-                    style="padding-left: 50px;">length = int(input("Enter the length of the password you want to creat:"))</code>
+                    class="code">length = int(input("Enter the length of the password you want to creat:"))</code>
                 <br>
                 4. Create a list for special characters and make a empty string. <br>
-                <code style="padding-left: 50px;">punctuationList = "!@#$%&*^/|\?"</code> <br>
-                <code style="padding-left: 50px;">characterList = ""</code> <br>
-                5. Now concatinate the string which we created named "characterList". Now to concatinate the string we
-                use some method like <code>string.ascii_uppercase, string.ascii_lowercase, string.digits</code>. These
-                are some methods where <code>string.ascii_uppercase</code> returns uppercase alphabets,
-                <code>sring.ascii_lowercase</code> reurns lowercase alphabets, <code>string.digits</code> returns
-                digits. <br>
-                <code style="padding-left: 50px;">characterList += string.ascii_uppercase</code> <br>
-                <code style="padding-left: 50px;">characterList += string.ascii_lowercase</code> <br>
-                <code style="padding-left: 50px;">characterList += string.digits</code> <br>
+                <code class="code">punctuationList = "!@#$%&*^/|\?"</code> <br>
+                <code class="code">characterList = ""</code> <br>
+                5. Now concatinate the string which we created named "characterList". Now to concatinate the string we use some method like <code>string.ascii_uppercase, string.ascii_lowercase, string.digits</code>. These are some methods where <code>string.ascii_uppercase</code> returns uppercase alphabets,<code>sring.ascii_lowercase</code> reurns lowercase alphabets, <code>string.digits</code> returns digits. <br>
+                <code class="code">characterList += string.ascii_uppercase</code> <br>
+                <code class="code">characterList += string.ascii_lowercase</code> <br>
+                <code class="code">characterList += string.digits</code> <br>
                 Now concatinating "punctuationList" also. <br>
-                <code style="padding-left: 50px;">characterList += punctuationList</code> <br>
+                <code class="code">characterList += punctuationList</code> <br>
                 6. Create an empty file in append mode. <br>
-                <code style="padding-left: 50px;">passFile = open("passwords.txt","a")</code> <br>
+                <code class="code">passFile = open("passwords.txt","a")</code> <br>
                 7. Create an empty list where our password will be stored. <br>
-                <code style="padding-left: 50px;">passwords = []</code> <br>
+                <code class="code">passwords = []</code> <br>
                 8. Now for creating the password first we need to execute a "for loop". This loop will be executed
                 whatever user inputed "The length of the passwords" that times. Then take a variable to pull one
                 character from the string named "characterList". We will use <code>random.choice()</code> method. Now
                 will use <code>list.append()</code> method to append pulled characters to the empty list which was
                 created in the name of 'password'. <br>
-                <code style="padding-left: 50px;">for i in range(length):</code> <br>
-                <code style="padding-left: 80px;">randChar = random.choice(characterList)</code> <br>
-                <code style="padding-left: 80px;">password.append(randChar)</code> <br>
+                <code class="code">for i in range(length):</code> <br>
+                <code class="code" id="cd1">randChar = random.choice(characterList)</code> <br>
+                <code class="code" id="cd2">password.append(randChar)</code> <br>
                 9. To save the password the file "passwords.txt". <br>
                 <code
                     style="padding-left: 50px;">passFile.write(f"{username} password is "+ "".join(password)+".\n")</code>
